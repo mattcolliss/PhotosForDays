@@ -21,14 +21,16 @@ class Coordinator {
         splitViewController.delegate = self
         
         //Scaffold the initial view controllers for the splitViewController
-        //TODO: change this to my actual view controllers
-        let vc = storyboard.instantiateInitialViewController()!
-        vc.view.backgroundColor = .systemBlue
-        let masterNav = UINavigationController(rootViewController: vc)
+        let selectDateViewModel = SelectDateViewModel()
+        let selectDateViewController: SelectDateViewController = storyboard.instantiateViewController(identifier: "SelectDateViewController") { coder in
+            return SelectDateViewController(coder: coder, viewModel: selectDateViewModel)
+        }
         
-        let vc2 = storyboard.instantiateInitialViewController()!
-        vc2.view.backgroundColor = .systemPurple
-        let detailNav = UINavigationController(rootViewController: vc2);
+        let masterNav = UINavigationController(rootViewController: selectDateViewController)
+        
+        let vc = UIViewController()
+        vc.view.backgroundColor = .systemPurple
+        let detailNav = UINavigationController(rootViewController: vc);
         
         splitViewController.viewControllers = [masterNav, detailNav];
         
@@ -36,6 +38,7 @@ class Coordinator {
     
 }
 
+// MARK: - UISplitViewControllerDelegate
 extension Coordinator: UISplitViewControllerDelegate {
     
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
