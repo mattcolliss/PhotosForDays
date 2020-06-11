@@ -7,14 +7,32 @@
 //
 
 import Foundation
+import Combine
 
 class SelectDateViewModel {
     
-    var selectedDate = Date()
+    /// Date currently selected by the user - defaults to the current date
+    @Published var selectedDate = Date()
     
+    /// Subject for selectedDate in a iser friednly format
+    lazy var formattedSelectedDateSubject: AnyPublisher<String?, Never> = {
+        return $selectedDate
+            .map ({ date in
+                return self.dateFormatter.string(from: date)
+            })
+            .eraseToAnyPublisher()
+    }()
+    
+    /// The user selected a new date
     func dateSelected(_ date: Date) {
         selectedDate = date
-        print(selectedDate);
     }
+    
+    private lazy var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .full
+        dateFormatter.timeStyle = .none
+        return dateFormatter
+    }()
     
 }

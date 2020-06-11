@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Combine
 
 class SelectDateViewController: UIViewController {
 
     private var viewModel: SelectDateViewModel
+    private var cancellables = Set<AnyCancellable>()
     
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var selectedDateLabel: UILabel!
@@ -27,6 +29,7 @@ class SelectDateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        setBindings()
     }
     
 }
@@ -37,6 +40,13 @@ extension SelectDateViewController {
     private func configureView() {
         datePicker.maximumDate = Date()
         datePicker.date = viewModel.selectedDate
+    }
+    
+    private func setBindings() {
+        viewModel.formattedSelectedDateSubject
+            .print()
+            .assign(to: \.text, on: selectedDateLabel)
+            .store(in: &cancellables)
     }
     
 }
