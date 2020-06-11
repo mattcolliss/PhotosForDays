@@ -58,13 +58,53 @@
 			children = (
 				C924578624929F440046F25C /* AppDelegate.swift */,
 				C924578824929F440046F25C /* SceneDelegate.swift */,
-				C924578A24929F440046F25C /* ViewController.swift */,
-				C924578C24929F440046F25C /* Main.storyboard */,
-				C924578F24929F480046F25C /* Assets.xcassets */,
-				C924579124929F480046F25C /* LaunchScreen.storyboard */,
+				C924579C2492A1080046F25C /* Modules */,
+				C924579D2492A10F0046F25C /* Models */,
+				C924579E2492A1190046F25C /* Services */,
+				C924579A2492A0B10046F25C /* Resources */,
 				C924579424929F480046F25C /* Info.plist */,
 			);
 			path = PhotosForDays;
+			sourceTree = "<group>";
+		};
+		C924579A2492A0B10046F25C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C924578F24929F480046F25C /* Assets.xcassets */,
+				C924579B2492A0BA0046F25C /* Storyboards */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C924579B2492A0BA0046F25C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C924578C24929F440046F25C /* Main.storyboard */,
+				C924579124929F480046F25C /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C924579C2492A1080046F25C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C924578A24929F440046F25C /* ViewController.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C924579D2492A10F0046F25C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C924579E2492A1190046F25C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
