@@ -12,4 +12,9 @@ class SelectDateViewModel {
     
     var selectedDate = Date()
     
+    func dateSelected(_ date: Date) {
+        selectedDate = date
+        print(selectedDate);
+    }
+    
 }
