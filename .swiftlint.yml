@@ -1,0 +1,30 @@
+disabled_rules:
+  - todo
+  - switch_case_alignment
+
+opt_in_rules:
+  - closure_end_indentation
+  - empty_count
+  - explicit_init
+  - first_where
+  - operator_usage_whitespace
+  - overridden_super_call
+  - redundant_nil_coalescing
+
+file_length: 500
+
+line_length: 
+  - 250 #warning
+  - 300 #error
+
+identifier_name:
+  min_length:
+    - 1 #warning
+    - 1 #error (essentially disabling minimum length check)
+  max_length: 50
+
+type_name:
+  max_length: 50
+
+excluded:
+  - Pods
