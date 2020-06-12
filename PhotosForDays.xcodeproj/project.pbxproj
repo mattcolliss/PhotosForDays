@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BD682879FF57298AFFE3801 /* Pods_PhotosForDays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F3ACD1929FBE3467ECB6FD /* Pods_PhotosForDays.framework */; };
 		C924578724929F440046F25C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924578624929F440046F25C /* AppDelegate.swift */; };
 		C924578924929F440046F25C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924578824929F440046F25C /* SceneDelegate.swift */; };
 		C924578E24929F440046F25C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C924578C24929F440046F25C /* Main.storyboard */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44F3ACD1929FBE3467ECB6FD /* Pods_PhotosForDays.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosForDays.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4C5812BDB941E61AFD3CC16 /* Pods-PhotosForDays.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosForDays.release.xcconfig"; path = "Target Support Files/Pods-PhotosForDays/Pods-PhotosForDays.release.xcconfig"; sourceTree = "<group>"; };
 		C924578324929F440046F25C /* PhotosForDays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosForDays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C924578624929F440046F25C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C924578824929F440046F25C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		C924579F2492A2380046F25C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C924580C2492AA470046F25C /* SelectDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateViewController.swift; sourceTree = "<group>"; };
 		C924580E2492AEB80046F25C /* SelectDateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateViewModel.swift; sourceTree = "<group>"; };
+		E766969BA9BEB4E579786C9E /* Pods-PhotosForDays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosForDays.debug.xcconfig"; path = "Target Support Files/Pods-PhotosForDays/Pods-PhotosForDays.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD682879FF57298AFFE3801 /* Pods_PhotosForDays.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		263D343C9A258A1BAC7E6EB2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E766969BA9BEB4E579786C9E /* Pods-PhotosForDays.debug.xcconfig */,
+				C4C5812BDB941E61AFD3CC16 /* Pods-PhotosForDays.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4367D5787691F35D985E6068 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44F3ACD1929FBE3467ECB6FD /* Pods_PhotosForDays.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C924577A24929F440046F25C = {
 			isa = PBXGroup;
 			children = (
 				C924578524929F440046F25C /* PhotosForDays */,
 				C924578424929F440046F25C /* Products */,
+				263D343C9A258A1BAC7E6EB2 /* Pods */,
+				4367D5787691F35D985E6068 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +153,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C924579724929F480046F25C /* Build configuration list for PBXNativeTarget "PhotosForDays" */;
 			buildPhases = (
+				0883EA7B086D136DC3C15DF4 /* [CP] Check Pods Manifest.lock */,
 				C924577F24929F440046F25C /* Sources */,
 				C924578024929F440046F25C /* Frameworks */,
 				C924578124929F440046F25C /* Resources */,
@@ -186,6 +212,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0883EA7B086D136DC3C15DF4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotosForDays-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C924577F24929F440046F25C /* Sources */ = {
@@ -338,6 +389,7 @@
 		};
 		C924579824929F480046F25C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E766969BA9BEB4E579786C9E /* Pods-PhotosForDays.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -356,6 +408,7 @@
 		};
 		C924579924929F480046F25C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4C5812BDB941E61AFD3CC16 /* Pods-PhotosForDays.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
