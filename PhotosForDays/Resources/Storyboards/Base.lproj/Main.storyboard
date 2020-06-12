@@ -95,6 +95,22 @@
             </objects>
             <point key="canvasLocation" x="138" y="859"/>
         </scene>
+        <!--Photos Collection View Controller-->
+        <scene sceneID="H6H-lg-gOj">
+            <objects>
+                <viewController storyboardIdentifier="PhotosCollectionViewController" id="sAS-Cy-IZJ" customClass="PhotosCollectionViewController" customModule="PhotosForDays" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bkn-j5-36g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="7rg-0G-7km"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TYt-Ts-6dr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1036" y="858"/>
+        </scene>
     </scenes>
     <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
