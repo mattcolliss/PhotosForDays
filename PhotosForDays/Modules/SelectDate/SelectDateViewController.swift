@@ -9,8 +9,15 @@
 import UIKit
 import Combine
 
+// MARK: - SelectDateViewControllerDelegate
+protocol SelectDateViewControllerDelegate: class {
+    func didSelect(_ date: Date)
+}
+
+// MARK: - SelectDateViewController
 class SelectDateViewController: UIViewController {
 
+    weak var delegate: SelectDateViewControllerDelegate?
     private var viewModel: SelectDateViewModel
     private var cancellables = Set<AnyCancellable>()
     
@@ -44,7 +51,6 @@ extension SelectDateViewController {
     
     private func setBindings() {
         viewModel.formattedSelectedDateSubject
-            .print()
             .assign(to: \.text, on: selectedDateLabel)
             .store(in: &cancellables)
     }
@@ -56,6 +62,10 @@ extension SelectDateViewController {
     
     @IBAction func datePickerValueChanged(picker: UIDatePicker) {
         viewModel.dateSelected(picker.date)
+    }
+    
+    @IBAction func startButtonTapped() {
+        delegate?.didSelect(viewModel.selectedDate)
     }
     
 }

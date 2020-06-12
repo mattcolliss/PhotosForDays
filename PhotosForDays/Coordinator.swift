@@ -25,6 +25,7 @@ class Coordinator {
         let selectDateViewController: SelectDateViewController = storyboard.instantiateViewController(identifier: "SelectDateViewController") { coder in
             return SelectDateViewController(coder: coder, viewModel: selectDateViewModel)
         }
+        selectDateViewController.delegate = self
         
         let masterNav = UINavigationController(rootViewController: selectDateViewController)
         
@@ -34,6 +35,15 @@ class Coordinator {
         
         splitViewController.viewControllers = [masterNav, detailNav];
         
+    }
+    
+}
+
+// MARK: - SelectDateViewControllerDelegate
+extension Coordinator: SelectDateViewControllerDelegate {
+    
+    func didSelect(_ date: Date) {
+        // TODO: make a new details view controller ad add it to the split view
     }
     
 }
