@@ -14,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var coordinator: Coordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-      
+
         // Instantiate a new coordinator and give it a splitViewController to contain its managed view controllers
         let splitViewController = UISplitViewController()
         coordinator = Coordinator(splitViewController)
@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = splitViewController
         window.makeKeyAndVisible()
         self.window = window
-        
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -56,6 +56,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
 }
-
