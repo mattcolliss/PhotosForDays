@@ -44,6 +44,10 @@ extension Coordinator: SelectDateViewControllerDelegate {
     
     func didSelect(_ date: Date) {
         // TODO: make a new details view controller ad add it to the split view
+        let vc = UIViewController()
+        vc.view.backgroundColor = .systemRed
+        let detailNav = UINavigationController(rootViewController: vc);
+        splitViewController.showDetailViewController(detailNav, sender: self)
     }
     
 }
