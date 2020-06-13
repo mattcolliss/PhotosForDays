@@ -8,6 +8,19 @@
 
 import Foundation
 
+// MARK: - Dates Convenience
+extension Date {
+
+    /// Return a new date by adding an amount of days to self
+    func addingDays(_ days: Int) -> Date {
+        guard let date = Calendar.current.date(byAdding: .day, value: days, to: self) else {
+            fatalError("Unalbe to calculate a new date, some has gone very wrong so trap")
+        }
+        return date
+    }
+
+}
+
 // MARK: - Date Formatters
 extension DateFormatter {
 

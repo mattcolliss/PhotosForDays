@@ -45,7 +45,7 @@ class SelectDateViewController: UIViewController {
 extension SelectDateViewController {
 
     private func configureView() {
-        datePicker.maximumDate = Date()
+        datePicker.maximumDate = viewModel.maximumDate
         datePicker.date = viewModel.selectedDate
     }
 

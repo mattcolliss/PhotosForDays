@@ -11,8 +11,11 @@ import Combine
 
 class SelectDateViewModel {
 
-    /// The date currently selected by the user - defaults to the current date
-    @Published var selectedDate = Date()
+    /// The latest date that can be selected by the user -  the day before the current date, as the Flickr expects a date in the past
+    let maximumDate = Date().addingDays(-1)
+
+    /// The date currently selected by the user - defaults to the day before the current date, as the Flickr expects a date in the past
+    @Published var selectedDate = Date().addingDays(-1)
 
     /// Subject publisher for the selectedDate formatted for display
     lazy var formattedSelectedDateSubject: AnyPublisher<String?, Never> = {
