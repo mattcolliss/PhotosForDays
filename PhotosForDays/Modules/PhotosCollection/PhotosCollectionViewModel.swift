@@ -32,6 +32,8 @@ class PhotosCollectionViewModel {
     /// The minimum amount of spacing between each row and column in the collection
     let minimumSpacing: CGFloat = 1
 
+    @Published var errorText: String?
+
     private var nextPage = 1
     private var totalPages = 1
     private var date: Date
@@ -47,23 +49,21 @@ class PhotosCollectionViewModel {
             return
         }
 
+        errorText = nil
         fecthingPhotos = true
 
         GetPhotosConfiguration(date: date, page: nextPage).start { [weak self] (result) in
 
             switch result {
             case let .success(getPhotosResponseWrapper):
-
                 self?.fecthingPhotos = false
                 self?.nextPage = getPhotosResponseWrapper.photos.page + 1
                 self?.totalPages = getPhotosResponseWrapper.photos.pages
                 self?.morePhotosAvailable = getPhotosResponseWrapper.photos.page < getPhotosResponseWrapper.photos.pages
                 self?.photos.append(contentsOf: getPhotosResponseWrapper.photos.photo)
-
             case let .failure(error):
-                //TOOD: handle error
-                print("Got error")
                 print(error)
+                self?.errorText = "Sorry, something went wrong while fetching the photos"
             }
 
         }

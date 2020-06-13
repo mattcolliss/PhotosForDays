@@ -3,6 +3,7 @@
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -148,19 +149,48 @@
                                     <outlet property="delegate" destination="sAS-Cy-IZJ" id="h8K-L9-rNZ"/>
                                 </connections>
                             </collectionView>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dlx-Ql-8L4">
+                                <rect key="frame" x="0.0" y="809.66666666666663" width="414" height="52.333333333333371"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oP8-iJ-s61">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="52.333333333333336"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ErrorText" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWw-7T-bf2">
+                                                <rect key="frame" x="16" y="15.999999999999998" width="382" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="16" left="16" bottom="16" right="16"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="ErrorBackground"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="oP8-iJ-s61" secondAttribute="bottom" id="R58-Qy-EcP"/>
+                                    <constraint firstItem="oP8-iJ-s61" firstAttribute="leading" secondItem="dlx-Ql-8L4" secondAttribute="leading" id="T2p-hZ-5py"/>
+                                    <constraint firstItem="oP8-iJ-s61" firstAttribute="top" secondItem="dlx-Ql-8L4" secondAttribute="top" id="XFQ-va-Qhw"/>
+                                    <constraint firstAttribute="trailing" secondItem="oP8-iJ-s61" secondAttribute="trailing" id="cZ7-c1-hOe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="7rg-0G-7km" firstAttribute="trailing" secondItem="dlx-Ql-8L4" secondAttribute="trailing" id="2Os-zl-Tt8"/>
                             <constraint firstItem="qER-gO-VTa" firstAttribute="leading" secondItem="7rg-0G-7km" secondAttribute="leading" id="As5-DK-Ero"/>
                             <constraint firstItem="qER-gO-VTa" firstAttribute="top" secondItem="bkn-j5-36g" secondAttribute="top" id="CiG-PS-dXW"/>
                             <constraint firstItem="7rg-0G-7km" firstAttribute="trailing" secondItem="qER-gO-VTa" secondAttribute="trailing" id="J8H-9b-6az"/>
                             <constraint firstAttribute="bottom" secondItem="qER-gO-VTa" secondAttribute="bottom" id="a6c-iP-Hs4"/>
+                            <constraint firstItem="7rg-0G-7km" firstAttribute="bottom" secondItem="dlx-Ql-8L4" secondAttribute="bottom" id="iWz-UY-7PD"/>
+                            <constraint firstItem="dlx-Ql-8L4" firstAttribute="leading" secondItem="7rg-0G-7km" secondAttribute="leading" id="nV9-FB-uoQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7rg-0G-7km"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="qER-gO-VTa" id="GUI-pg-AqI"/>
+                        <outlet property="errorLabel" destination="xWw-7T-bf2" id="9wc-lN-HIR"/>
+                        <outlet property="errorView" destination="dlx-Ql-8L4" id="vVa-GR-oNI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TYt-Ts-6dr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -169,4 +199,9 @@
         </scene>
     </scenes>
     <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <resources>
+        <namedColor name="ErrorBackground">
+            <color red="0.98039215686274506" green="0.20392156862745098" blue="0.16470588235294117" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -18,6 +18,8 @@ protocol PhotosCollectionViewControllerDelegate: class {
 class PhotosCollectionViewController: UIViewController {
 
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var errorView: UIView!
+    @IBOutlet var errorLabel: UILabel!
 
     weak var delegate: PhotosCollectionViewControllerDelegate?
     private var viewModel: PhotosCollectionViewModel
@@ -68,6 +70,15 @@ extension PhotosCollectionViewController {
         // Update the diffable dataSource whenever the photos change
         viewModel.$photos
             .sink(receiveValue: self.applySnapshot)
+            .store(in: &cancellables)
+
+        viewModel.$errorText
+            .sink { [weak self] errorText in
+                self?.errorLabel.text = errorText
+                UIView.animate(withDuration: 0.75) {
+                    self?.errorView.alpha = errorText == nil ? 0 : 1
+                }
+            }
             .store(in: &cancellables)
 
     }
