@@ -13,6 +13,7 @@ class PhotosCollectionViewModel {
 
     @Published var photos = [Photo]()
     var morePhotosAvailable = true
+    var fecthingPhotos = false
 
     private var nextPage = 1
     private var totalPages = 1
@@ -28,11 +29,14 @@ class PhotosCollectionViewModel {
             return
         }
 
+        fecthingPhotos = true
+
         GetPhotosConfiguration(date: date, page: nextPage).start { [weak self] (result) in
 
             switch result {
             case let .success(getPhotosResponseWrapper):
 
+                self?.fecthingPhotos = false
                 self?.nextPage = getPhotosResponseWrapper.photos.page + 1
                 self?.totalPages = getPhotosResponseWrapper.photos.pages
                 self?.morePhotosAvailable = getPhotosResponseWrapper.photos.page < getPhotosResponseWrapper.photos.pages

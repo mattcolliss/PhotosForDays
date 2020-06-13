@@ -98,4 +98,15 @@ extension PhotosCollectionViewController: UICollectionViewDelegateFlowLayout {
         return minimumSpacing
     }
 
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+
+        if indexPath.item == viewModel.photos.count - 1
+            && viewModel.morePhotosAvailable
+            && !viewModel.fecthingPhotos {
+            print("Fetching")
+            viewModel.fetchPhotos()
+        }
+
+    }
+
 }
