@@ -36,6 +36,11 @@ class PhotosCollectionViewController: UIViewController {
         viewModel.fetchPhotos()
     }
 
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        collectionView.reloadData()
+    }
+
 }
 
 // MARK: - View
@@ -46,6 +51,7 @@ extension PhotosCollectionViewController {
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) { (collectionView, indexPath, photo) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.reuseIdentifier, for: indexPath) as? PhotoCollectionViewCell
             cell?.configure(with: photo, forIndexPath: indexPath)
+            cell?.photoWidthConstraint.constant = self.itemWidth
             return cell
         }
 
@@ -69,11 +75,27 @@ extension PhotosCollectionViewController {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension PhotosCollectionViewController: UICollectionViewDelegateFlowLayout {
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    var itemWidth: CGFloat {
         let spacing = minimumSpacing * (itemsPerRow - 1)
         let availableWidth = collectionView.frame.size.width - spacing
         let widthPerItem = floor(availableWidth / itemsPerRow)
-        return CGSize(width: widthPerItem, height: widthPerItem)
+        return widthPerItem
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: itemWidth, height: itemWidth)
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return minimumSpacing
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout
+        collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return minimumSpacing
     }
 
 }
