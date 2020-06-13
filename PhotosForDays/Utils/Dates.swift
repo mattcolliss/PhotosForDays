@@ -26,4 +26,12 @@ extension DateFormatter {
         return dateFormatter
     }()
 
+    /// Medium format date is user's own locale
+    static var mediumDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        return dateFormatter
+    }()
+
 }

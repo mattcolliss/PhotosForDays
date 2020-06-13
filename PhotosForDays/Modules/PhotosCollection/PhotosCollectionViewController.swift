@@ -48,6 +48,8 @@ extension PhotosCollectionViewController {
 
     private func configureView() {
 
+        title = viewModel.formattedDate
+
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) { (collectionView, indexPath, photo) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.reuseIdentifier, for: indexPath) as? PhotoCollectionViewCell
             cell?.configure(with: photo, forIndexPath: indexPath)
@@ -58,9 +60,11 @@ extension PhotosCollectionViewController {
     }
 
     private func setBindings() {
+
         viewModel.$photos
             .sink(receiveValue: self.applySnapshot)
             .store(in: &cancellables)
+
     }
 
     private func applySnapshot(_ photos: [Photo]) {

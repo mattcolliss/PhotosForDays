@@ -12,8 +12,14 @@ import Combine
 class PhotosCollectionViewModel {
 
     @Published var photos = [Photo]()
+
     var morePhotosAvailable = true
+
     var fecthingPhotos = false
+
+    lazy var formattedDate: String = {
+        return DateFormatter.mediumDateFormatter.string(from: self.date)
+    }()
 
     private var nextPage = 1
     private var totalPages = 1
