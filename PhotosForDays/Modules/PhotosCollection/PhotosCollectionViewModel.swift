@@ -11,12 +11,12 @@ import Combine
 
 class PhotosCollectionViewModel {
 
-    private var date: Date
+    @Published var photos = [Photo]()
+    var morePhotosAvailable = true
 
-    var photos = [Photo]()
     private var nextPage = 1
     private var totalPages = 1
-    var morePhotosAvailable = true
+    private var date: Date
 
     init(date: Date) {
         self.date = date
