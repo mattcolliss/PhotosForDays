@@ -14,6 +14,9 @@ class SelectDateViewModel {
     /// The latest date that can be selected by the user -  the day before the current date, as the Flickr expects a date in the past
     let maximumDate = Date().addingDays(-1)
 
+    /// The ealiest date that can be selected by the user - the Flickr API seems to go back to about 2004, so using the last 15 years to be safe
+    let minimumDate = Date().addingYears(-15)
+
     /// The date currently selected by the user - defaults to the day before the current date, as the Flickr expects a date in the past
     @Published var selectedDate = Date().addingDays(-1)
 

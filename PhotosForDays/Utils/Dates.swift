@@ -19,6 +19,14 @@ extension Date {
         return date
     }
 
+    /// Return a new date by adding an amount of years to self
+    func addingYears(_ years: Int) -> Date {
+        guard let date = Calendar.current.date(byAdding: .year, value: years, to: self) else {
+            fatalError("Unalbe to calculate a new date, some has gone very wrong so trap")
+        }
+        return date
+    }
+
 }
 
 // MARK: - Date Formatters
