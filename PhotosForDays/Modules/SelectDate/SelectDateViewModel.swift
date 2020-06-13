@@ -18,7 +18,7 @@ class SelectDateViewModel {
     lazy var formattedSelectedDateSubject: AnyPublisher<String?, Never> = {
         return $selectedDate
             .map({ date in
-                return self.dateFormatter.string(from: date)
+                return DateFormatter.fullDateFormatter.string(from: date)
             })
             .eraseToAnyPublisher()
     }()
@@ -27,12 +27,5 @@ class SelectDateViewModel {
     func dateSelected(_ date: Date) {
         selectedDate = date
     }
-
-    private lazy var dateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .full
-        dateFormatter.timeStyle = .none
-        return dateFormatter
-    }()
 
 }

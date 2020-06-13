@@ -23,6 +23,7 @@ class PhotosCollectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.fetchPhotos()
     }
 
 }

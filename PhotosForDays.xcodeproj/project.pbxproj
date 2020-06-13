@@ -18,6 +18,12 @@
 		C924580F2492AEB80046F25C /* SelectDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924580E2492AEB80046F25C /* SelectDateViewModel.swift */; };
 		C9245813249404A60046F25C /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9245812249404A60046F25C /* PhotosCollectionViewController.swift */; };
 		C9245815249404BB0046F25C /* PhotosCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9245814249404BB0046F25C /* PhotosCollectionViewModel.swift */; };
+		C92458172494C3E80046F25C /* WebServiceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92458162494C3E80046F25C /* WebServiceConfiguration.swift */; };
+		C92458192494C4C40046F25C /* WebServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92458182494C4C40046F25C /* WebServiceError.swift */; };
+		C924581B2494C5420046F25C /* GetPhotosConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924581A2494C5420046F25C /* GetPhotosConfiguration.swift */; };
+		C924581D2494C9A60046F25C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924581C2494C9A60046F25C /* Photo.swift */; };
+		C92458202494CEE20046F25C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924581F2494CEE20046F25C /* Constants.swift */; };
+		C92458222494D2250046F25C /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92458212494D2250046F25C /* Dates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +41,12 @@
 		C924580E2492AEB80046F25C /* SelectDateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateViewModel.swift; sourceTree = "<group>"; };
 		C9245812249404A60046F25C /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		C9245814249404BB0046F25C /* PhotosCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewModel.swift; sourceTree = "<group>"; };
+		C92458162494C3E80046F25C /* WebServiceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceConfiguration.swift; sourceTree = "<group>"; };
+		C92458182494C4C40046F25C /* WebServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceError.swift; sourceTree = "<group>"; };
+		C924581A2494C5420046F25C /* GetPhotosConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPhotosConfiguration.swift; sourceTree = "<group>"; };
+		C924581C2494C9A60046F25C /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		C924581F2494CEE20046F25C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C92458212494D2250046F25C /* Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
 		E766969BA9BEB4E579786C9E /* Pods-PhotosForDays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosForDays.debug.xcconfig"; path = "Target Support Files/Pods-PhotosForDays/Pods-PhotosForDays.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +107,7 @@
 				C924579D2492A10F0046F25C /* Models */,
 				C924579E2492A1190046F25C /* Services */,
 				C924579A2492A0B10046F25C /* Resources */,
+				C924581E2494CED00046F25C /* Utils */,
 				C924579424929F480046F25C /* Info.plist */,
 			);
 			path = PhotosForDays;
@@ -130,6 +143,7 @@
 		C924579D2492A10F0046F25C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C924581C2494C9A60046F25C /* Photo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -137,6 +151,9 @@
 		C924579E2492A1190046F25C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C92458162494C3E80046F25C /* WebServiceConfiguration.swift */,
+				C92458182494C4C40046F25C /* WebServiceError.swift */,
+				C924581A2494C5420046F25C /* GetPhotosConfiguration.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -157,6 +174,15 @@
 				C9245814249404BB0046F25C /* PhotosCollectionViewModel.swift */,
 			);
 			path = PhotosCollection;
+			sourceTree = "<group>";
+		};
+		C924581E2494CED00046F25C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C924581F2494CEE20046F25C /* Constants.swift */,
+				C92458212494D2250046F25C /* Dates.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,13 +300,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C924581B2494C5420046F25C /* GetPhotosConfiguration.swift in Sources */,
 				C9245815249404BB0046F25C /* PhotosCollectionViewModel.swift in Sources */,
 				C924580F2492AEB80046F25C /* SelectDateViewModel.swift in Sources */,
 				C924580D2492AA470046F25C /* SelectDateViewController.swift in Sources */,
 				C92457A02492A2380046F25C /* Coordinator.swift in Sources */,
 				C9245813249404A60046F25C /* PhotosCollectionViewController.swift in Sources */,
 				C924578724929F440046F25C /* AppDelegate.swift in Sources */,
+				C924581D2494C9A60046F25C /* Photo.swift in Sources */,
+				C92458222494D2250046F25C /* Dates.swift in Sources */,
 				C924578924929F440046F25C /* SceneDelegate.swift in Sources */,
+				C92458192494C4C40046F25C /* WebServiceError.swift in Sources */,
+				C92458172494C3E80046F25C /* WebServiceConfiguration.swift in Sources */,
+				C92458202494CEE20046F25C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
