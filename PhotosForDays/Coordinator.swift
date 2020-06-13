@@ -60,8 +60,27 @@ extension Coordinator: SelectDateViewControllerDelegate {
 extension Coordinator: PhotosCollectionViewControllerDelegate {
 
     func didSelect(_ photo: Photo) {
-        // Present the photo
-        print(photo)
+
+        // Present the photo details view controller modally from the splitViewController
+        let photoDetailsViewModel = PhotoDetailsViewModel(photo: photo)
+        let photoDetailsViewController: PhotoDetailsViewController = storyboard.instantiateViewController(identifier: "PhotoDetailsViewController") { coder in
+            return PhotoDetailsViewController(coder: coder, viewModel: photoDetailsViewModel)
+        }
+        photoDetailsViewController.delegate = self
+
+        let detailNav = UINavigationController(rootViewController: photoDetailsViewController)
+        detailNav.modalPresentationStyle = .fullScreen
+        splitViewController.present(detailNav, animated: true, completion: nil)
+
+    }
+
+}
+
+// MARK: - PhotoDetailsViewControllerDelegate
+extension Coordinator: PhotoDetailsViewControllerDelegate {
+
+    func dismiss(photoDetailsViewController: PhotoDetailsViewController) {
+        photoDetailsViewController.dismiss(animated: true)
     }
 
 }
