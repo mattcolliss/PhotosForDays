@@ -24,9 +24,6 @@ class PhotosCollectionViewController: UIViewController {
     private var cancellables = Set<AnyCancellable>()
     private var dataSource: UICollectionViewDiffableDataSource<Int, Photo>?
 
-    private let itemsPerRow: CGFloat = 3
-    private let minimumSpacing: CGFloat = 1
-
     init?(coder: NSCoder, viewModel: PhotosCollectionViewModel) {
         self.viewModel = viewModel
         super.init(coder: coder)
@@ -89,9 +86,9 @@ extension PhotosCollectionViewController: UICollectionViewDelegateFlowLayout {
 
     /// The computed width for each item in the collection view
     private var itemWidth: CGFloat {
-        let spacing = minimumSpacing * (itemsPerRow - 1)
+        let spacing = viewModel.minimumSpacing * (viewModel.itemsPerRow - 1)
         let availableWidth = collectionView.frame.size.width - spacing
-        let widthPerItem = floor(availableWidth / itemsPerRow)
+        let widthPerItem = floor(availableWidth / viewModel.itemsPerRow)
         return widthPerItem
     }
 

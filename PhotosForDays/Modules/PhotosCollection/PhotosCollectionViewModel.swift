@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 class PhotosCollectionViewModel {
 
@@ -24,6 +25,12 @@ class PhotosCollectionViewModel {
     lazy var formattedDate: String = {
         return DateFormatter.mediumDateFormatter.string(from: self.date)
     }()
+
+    /// The number of items do display in each row of the collection
+    let itemsPerRow: CGFloat = 3
+
+    /// The minimum amount of spacing between each row and column in the collection
+    let minimumSpacing: CGFloat = 1
 
     private var nextPage = 1
     private var totalPages = 1
