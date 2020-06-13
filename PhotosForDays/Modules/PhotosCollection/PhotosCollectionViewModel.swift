@@ -11,12 +11,16 @@ import Combine
 
 class PhotosCollectionViewModel {
 
+    /// The currently fetched list of photos for the selected date
     @Published var photos = [Photo]()
 
+    /// Are there any more photos to fetch for the current date
     var morePhotosAvailable = true
 
+    /// Are photos currently being fetched
     var fecthingPhotos = false
 
+    /// The selected date formatted for display
     lazy var formattedDate: String = {
         return DateFormatter.mediumDateFormatter.string(from: self.date)
     }()
@@ -29,6 +33,7 @@ class PhotosCollectionViewModel {
         self.date = date
     }
 
+    /// Fetch  the next page of photos from the Flickr API
     func fetchPhotos() {
 
         guard morePhotosAvailable else {

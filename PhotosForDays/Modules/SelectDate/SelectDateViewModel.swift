@@ -11,10 +11,10 @@ import Combine
 
 class SelectDateViewModel {
 
-    /// Date currently selected by the user - defaults to the current date
+    /// The date currently selected by the user - defaults to the current date
     @Published var selectedDate = Date()
 
-    /// Subject for selectedDate in a iser friednly format
+    /// Subject publisher for the selectedDate formatted for display
     lazy var formattedSelectedDateSubject: AnyPublisher<String?, Never> = {
         return $selectedDate
             .map({ date in

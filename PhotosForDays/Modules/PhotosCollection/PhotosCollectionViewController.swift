@@ -107,7 +107,6 @@ extension PhotosCollectionViewController: UICollectionViewDelegateFlowLayout {
         if indexPath.item == viewModel.photos.count - 1
             && viewModel.morePhotosAvailable
             && !viewModel.fecthingPhotos {
-            print("Fetching")
             viewModel.fetchPhotos()
         }
 
