@@ -26,6 +26,8 @@
 		C92458222494D2250046F25C /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92458212494D2250046F25C /* Dates.swift */; };
 		C92458242494E3F20046F25C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92458232494E3F20046F25C /* PhotoCollectionViewCell.swift */; };
 		C9245826249528E40046F25C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9245825249528E40046F25C /* Colors.xcassets */; };
+		C9245829249530600046F25C /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9245828249530600046F25C /* PhotoDetailsViewController.swift */; };
+		C924582B249530850046F25C /* PhotoDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924582A249530850046F25C /* PhotoDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		C92458212494D2250046F25C /* Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
 		C92458232494E3F20046F25C /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		C9245825249528E40046F25C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		C9245828249530600046F25C /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
+		C924582A249530850046F25C /* PhotoDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewModel.swift; sourceTree = "<group>"; };
 		E766969BA9BEB4E579786C9E /* Pods-PhotosForDays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosForDays.debug.xcconfig"; path = "Target Support Files/Pods-PhotosForDays/Pods-PhotosForDays.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +145,7 @@
 			children = (
 				C924580B2492AA2D0046F25C /* SelectDate */,
 				C9245811249404890046F25C /* PhotosCollection */,
+				C924582724952FFD0046F25C /* PhotoDetails */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -189,6 +194,15 @@
 				C92458212494D2250046F25C /* Dates.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		C924582724952FFD0046F25C /* PhotoDetails */ = {
+			isa = PBXGroup;
+			children = (
+				C9245828249530600046F25C /* PhotoDetailsViewController.swift */,
+				C924582A249530850046F25C /* PhotoDetailsViewModel.swift */,
+			);
+			path = PhotoDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +341,7 @@
 			files = (
 				C924581B2494C5420046F25C /* GetPhotosConfiguration.swift in Sources */,
 				C9245815249404BB0046F25C /* PhotosCollectionViewModel.swift in Sources */,
+				C924582B249530850046F25C /* PhotoDetailsViewModel.swift in Sources */,
 				C924580F2492AEB80046F25C /* SelectDateViewModel.swift in Sources */,
 				C924580D2492AA470046F25C /* SelectDateViewController.swift in Sources */,
 				C92457A02492A2380046F25C /* Coordinator.swift in Sources */,
@@ -336,6 +351,7 @@
 				C92458222494D2250046F25C /* Dates.swift in Sources */,
 				C924578924929F440046F25C /* SceneDelegate.swift in Sources */,
 				C92458192494C4C40046F25C /* WebServiceError.swift in Sources */,
+				C9245829249530600046F25C /* PhotoDetailsViewController.swift in Sources */,
 				C92458242494E3F20046F25C /* PhotoCollectionViewCell.swift in Sources */,
 				C92458172494C3E80046F25C /* WebServiceConfiguration.swift in Sources */,
 				C92458202494CEE20046F25C /* Constants.swift in Sources */,

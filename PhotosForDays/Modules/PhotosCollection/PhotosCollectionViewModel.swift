@@ -22,9 +22,9 @@ class PhotosCollectionViewModel {
     var fecthingPhotos = false
 
     /// The selected date formatted for display
-    lazy var formattedDate: String = {
+    var formattedDate: String {
         return DateFormatter.mediumDateFormatter.string(from: self.date)
-    }()
+    }
 
     /// The number of items do display in each row of the collection
     let itemsPerRow: CGFloat = 3

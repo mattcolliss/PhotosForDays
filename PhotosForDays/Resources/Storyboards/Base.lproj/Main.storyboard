@@ -197,11 +197,91 @@
             </objects>
             <point key="canvasLocation" x="835" y="-72"/>
         </scene>
+        <!--Photo Details View Controller-->
+        <scene sceneID="3hz-fv-tYL">
+            <objects>
+                <viewController storyboardIdentifier="PhotoDetailsViewController" id="dXG-ZY-N72" customClass="PhotoDetailsViewController" customModule="PhotosForDays" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xe2-xx-0JS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="plK-rG-o7V">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bCK-ed-K0Y" appends="YES" id="2P4-Oe-uO8"/>
+                                </connections>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0x-cb-gWJ">
+                                <rect key="frame" x="0.0" y="747.33333333333337" width="414" height="65.666666666666629"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wIh-Sh-rA6">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="65.666666666666629"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aZI-uP-85F">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="65.666666666666671"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="TItle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOl-jC-KDs">
+                                                    <rect key="frame" x="16" y="15.999999999999996" width="382" height="33.666666666666657"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <edgeInsets key="layoutMargins" top="16" left="16" bottom="16" right="16"/>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="aZI-uP-85F" firstAttribute="top" secondItem="wIh-Sh-rA6" secondAttribute="top" id="58R-Bl-uPL"/>
+                                        <constraint firstAttribute="bottom" secondItem="aZI-uP-85F" secondAttribute="bottom" id="L1a-jh-ZmZ"/>
+                                        <constraint firstItem="aZI-uP-85F" firstAttribute="leading" secondItem="wIh-Sh-rA6" secondAttribute="leading" id="MCa-4t-IXm"/>
+                                        <constraint firstAttribute="trailing" secondItem="aZI-uP-85F" secondAttribute="trailing" id="VWM-Xs-gRp"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="plK-rG-o7V" firstAttribute="top" secondItem="xe2-xx-0JS" secondAttribute="top" id="6ZP-cZ-B7Y"/>
+                            <constraint firstAttribute="trailing" secondItem="plK-rG-o7V" secondAttribute="trailing" id="M9Y-XS-MbY"/>
+                            <constraint firstAttribute="bottom" secondItem="plK-rG-o7V" secondAttribute="bottom" id="ZbF-4p-cbm"/>
+                            <constraint firstItem="uAh-7U-GQ7" firstAttribute="bottom" secondItem="g0x-cb-gWJ" secondAttribute="bottom" id="c1N-6e-Dx0"/>
+                            <constraint firstItem="uAh-7U-GQ7" firstAttribute="trailing" secondItem="g0x-cb-gWJ" secondAttribute="trailing" id="fRB-hS-bz3"/>
+                            <constraint firstItem="g0x-cb-gWJ" firstAttribute="leading" secondItem="uAh-7U-GQ7" secondAttribute="leading" id="spR-u1-8QB"/>
+                            <constraint firstItem="plK-rG-o7V" firstAttribute="leading" secondItem="xe2-xx-0JS" secondAttribute="leading" id="yGL-xK-Ltq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uAh-7U-GQ7"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ZB7-xE-V8q">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Kfe-cN-Ipx">
+                            <connections>
+                                <action selector="doneButtonTapped" destination="dXG-ZY-N72" id="uz8-ZS-FXA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="photoImageView" destination="plK-rG-o7V" id="CFy-DX-jV5"/>
+                        <outlet property="titleLabel" destination="SOl-jC-KDs" id="BIs-OP-B2f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iFR-Jq-VYQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bCK-ed-K0Y">
+                    <connections>
+                        <action selector="photoTapped:" destination="dXG-ZY-N72" id="eeA-Yz-Mty"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1742" y="-72"/>
+        </scene>
     </scenes>
     <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <namedColor name="ErrorBackground">
-            <color red="0.98039215686274506" green="0.20392156862745098" blue="0.16470588235294117" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.98039215686274506" green="0.20392156862745098" blue="0.16470588235294117" alpha="0.89999997615814209" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
