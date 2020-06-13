@@ -48,8 +48,20 @@ extension Coordinator: SelectDateViewControllerDelegate {
         let photosCollectionViewController: PhotosCollectionViewController = storyboard.instantiateViewController(identifier: "PhotosCollectionViewController") { coder in
             return PhotosCollectionViewController(coder: coder, viewModel: photosCollectionViewModel)
         }
+        photosCollectionViewController.delegate = self
+
         let detailNav = UINavigationController(rootViewController: photosCollectionViewController)
         splitViewController.showDetailViewController(detailNav, sender: self)
+    }
+
+}
+
+// MARK: - PhotosCollectionViewControllerDelegate
+extension Coordinator: PhotosCollectionViewControllerDelegate {
+
+    func didSelect(_ photo: Photo) {
+        // Present the photo
+        print(photo)
     }
 
 }

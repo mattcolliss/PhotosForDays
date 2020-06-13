@@ -9,10 +9,17 @@
 import UIKit
 import Combine
 
+// MARK: - PhotosCollectionViewControllerDelegate
+protocol PhotosCollectionViewControllerDelegate: class {
+    func didSelect(_ photo: Photo)
+}
+
+// MARK: - PhotosCollectionViewController
 class PhotosCollectionViewController: UIViewController {
 
     @IBOutlet var collectionView: UICollectionView!
 
+    weak var delegate: PhotosCollectionViewControllerDelegate?
     private var viewModel: PhotosCollectionViewModel
     private var cancellables = Set<AnyCancellable>()
     private var dataSource: UICollectionViewDiffableDataSource<Int, Photo>?
@@ -61,6 +68,7 @@ extension PhotosCollectionViewController {
 
     private func setBindings() {
 
+        // Update the diffable dataSource whenever the photos change
         viewModel.$photos
             .sink(receiveValue: self.applySnapshot)
             .store(in: &cancellables)
@@ -79,7 +87,8 @@ extension PhotosCollectionViewController {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension PhotosCollectionViewController: UICollectionViewDelegateFlowLayout {
 
-    var itemWidth: CGFloat {
+    /// The computed width for each item in the collection view
+    private var itemWidth: CGFloat {
         let spacing = minimumSpacing * (itemsPerRow - 1)
         let availableWidth = collectionView.frame.size.width - spacing
         let widthPerItem = floor(availableWidth / itemsPerRow)
@@ -90,26 +99,18 @@ extension PhotosCollectionViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: itemWidth, height: itemWidth)
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return minimumSpacing
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout
-        collectionViewLayout: UICollectionViewLayout,
-                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return minimumSpacing
-    }
-
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-
+        // If we've reached the bottom of the collection view, request more photos from the view model if availble
         if indexPath.item == viewModel.photos.count - 1
             && viewModel.morePhotosAvailable
             && !viewModel.fecthingPhotos {
             viewModel.fetchPhotos()
         }
+    }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photo = viewModel.photos[indexPath.item]
+        delegate?.didSelect(photo)
     }
 
 }
