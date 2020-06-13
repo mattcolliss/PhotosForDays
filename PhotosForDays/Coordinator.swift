@@ -43,11 +43,25 @@ class Coordinator {
 extension Coordinator: SelectDateViewControllerDelegate {
 
     func didSelect(_ date: Date) {
-        // TODO: make a new details view controller ad add it to the split view
-        let vc = UIViewController()
-        vc.view.backgroundColor = .systemRed
-        let detailNav = UINavigationController(rootViewController: vc)
+        // Set the detail view controller to a new instance of the photos collection view for the slected date
+        let photosCollectionViewModel = PhotosCollectionViewModel(date: date)
+        let photosCollectionViewController: PhotosCollectionViewController = storyboard.instantiateViewController(identifier: "PhotosCollectionViewController") { coder in
+            return PhotosCollectionViewController(coder: coder, viewModel: photosCollectionViewModel)
+        }
+        photosCollectionViewController.delegate = self
+
+        let detailNav = UINavigationController(rootViewController: photosCollectionViewController)
         splitViewController.showDetailViewController(detailNav, sender: self)
+    }
+
+}
+
+// MARK: - PhotosCollectionViewControllerDelegate
+extension Coordinator: PhotosCollectionViewControllerDelegate {
+
+    func didSelect(_ photo: Photo) {
+        // Present the photo
+        print(photo)
     }
 
 }
