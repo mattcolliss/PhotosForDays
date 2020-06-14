@@ -28,6 +28,7 @@
 		C9245826249528E40046F25C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9245825249528E40046F25C /* Colors.xcassets */; };
 		C9245829249530600046F25C /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9245828249530600046F25C /* PhotoDetailsViewController.swift */; };
 		C924582B249530850046F25C /* PhotoDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924582A249530850046F25C /* PhotoDetailsViewModel.swift */; };
+		C924582D249541130046F25C /* PhotoDetailsAnimatedTransistioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924582C249541130046F25C /* PhotoDetailsAnimatedTransistioning.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		C9245825249528E40046F25C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		C9245828249530600046F25C /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 		C924582A249530850046F25C /* PhotoDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewModel.swift; sourceTree = "<group>"; };
+		C924582C249541130046F25C /* PhotoDetailsAnimatedTransistioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsAnimatedTransistioning.swift; sourceTree = "<group>"; };
 		E766969BA9BEB4E579786C9E /* Pods-PhotosForDays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosForDays.debug.xcconfig"; path = "Target Support Files/Pods-PhotosForDays/Pods-PhotosForDays.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,6 +203,7 @@
 			children = (
 				C9245828249530600046F25C /* PhotoDetailsViewController.swift */,
 				C924582A249530850046F25C /* PhotoDetailsViewModel.swift */,
+				C924582C249541130046F25C /* PhotoDetailsAnimatedTransistioning.swift */,
 			);
 			path = PhotoDetails;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				C924582B249530850046F25C /* PhotoDetailsViewModel.swift in Sources */,
 				C924580F2492AEB80046F25C /* SelectDateViewModel.swift in Sources */,
 				C924580D2492AA470046F25C /* SelectDateViewController.swift in Sources */,
+				C924582D249541130046F25C /* PhotoDetailsAnimatedTransistioning.swift in Sources */,
 				C92457A02492A2380046F25C /* Coordinator.swift in Sources */,
 				C9245813249404A60046F25C /* PhotosCollectionViewController.swift in Sources */,
 				C924578724929F440046F25C /* AppDelegate.swift in Sources */,

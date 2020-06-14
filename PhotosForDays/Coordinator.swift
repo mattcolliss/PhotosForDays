@@ -8,14 +8,22 @@
 
 import UIKit
 
-class Coordinator {
+class Coordinator: NSObject {
 
+    /// The root container view controller
     let splitViewController: UISplitViewController
+
+    /// The storyboard containing all dispalyed view controllers in this coordinator
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+    /// Custom animated transitioning for presenting the photo details view controller
+    let photoDetailsAnimatedTransistioning = PhotoDetailsAnimatedTransistioning()
 
     init(_ splitViewController: UISplitViewController) {
 
         self.splitViewController = splitViewController
+        super.init()
+
         splitViewController.loadViewIfNeeded()
         splitViewController.preferredDisplayMode = .allVisible
         splitViewController.delegate = self
@@ -28,7 +36,6 @@ class Coordinator {
         selectDateViewController.delegate = self
 
         let masterNav = UINavigationController(rootViewController: selectDateViewController)
-
         let vc = UIViewController()
         vc.view.backgroundColor = .systemPurple
         let detailNav = UINavigationController(rootViewController: vc)
@@ -59,7 +66,7 @@ extension Coordinator: SelectDateViewControllerDelegate {
 // MARK: - PhotosCollectionViewControllerDelegate
 extension Coordinator: PhotosCollectionViewControllerDelegate {
 
-    func didSelect(_ photo: Photo) {
+    func didSelect(_ photo: Photo, withFrame frame: CGRect) {
 
         // Present the photo details view controller modally from the splitViewController
         let photoDetailsViewModel = PhotoDetailsViewModel(photo: photo)
@@ -70,6 +77,9 @@ extension Coordinator: PhotosCollectionViewControllerDelegate {
 
         let detailNav = UINavigationController(rootViewController: photoDetailsViewController)
         detailNav.modalPresentationStyle = .fullScreen
+        detailNav.transitioningDelegate = self
+        photoDetailsAnimatedTransistioning.originFrame = frame
+        photoDetailsAnimatedTransistioning.presenting = true
         splitViewController.present(detailNav, animated: true, completion: nil)
 
     }
@@ -80,7 +90,33 @@ extension Coordinator: PhotosCollectionViewControllerDelegate {
 extension Coordinator: PhotoDetailsViewControllerDelegate {
 
     func dismiss(photoDetailsViewController: PhotoDetailsViewController) {
+        photoDetailsAnimatedTransistioning.presenting = false
         photoDetailsViewController.dismiss(animated: true)
+    }
+
+}
+
+// MARK: - UIViewControllerTransitioningDelegate
+extension Coordinator: UIViewControllerTransitioningDelegate {
+
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        // check what we're presenting and return the appropriate animated transitioning
+        if let navContorller = presented as? UINavigationController,
+            navContorller.viewControllers.first is PhotoDetailsViewController {
+            return photoDetailsAnimatedTransistioning
+        } else {
+            return nil
+        }
+    }
+
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        // check what we're dismissing and return the appropriate animated transitioning
+        if let navContorller = dismissed as? UINavigationController,
+            navContorller.viewControllers.first is PhotoDetailsViewController {
+            return photoDetailsAnimatedTransistioning
+        } else {
+            return nil
+        }
     }
 
 }
