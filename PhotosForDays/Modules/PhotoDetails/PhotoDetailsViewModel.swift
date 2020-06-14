@@ -22,7 +22,7 @@ class PhotoDetailsViewModel {
     }
 
     /// The current scale type used to dusply the photo
-    @Published var photoScaleMode: UIView.ContentMode = .scaleAspectFit
+    @Published var photoScaleMode: UIView.ContentMode = .scaleAspectFill
 
     private var photo: Photo
 
@@ -37,6 +37,10 @@ class PhotoDetailsViewModel {
         } else {
             photoScaleMode = .scaleAspectFit
         }
+    }
+
+    func resetPhotoScaleMode() {
+        photoScaleMode = .scaleAspectFill
     }
 
 }

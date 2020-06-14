@@ -64,6 +64,7 @@ extension PhotoDetailsViewController {
     }
 
     @IBAction func doneButtonTapped() {
+        viewModel.resetPhotoScaleMode()
         delegate?.dismiss(photoDetailsViewController: self)
     }
 
