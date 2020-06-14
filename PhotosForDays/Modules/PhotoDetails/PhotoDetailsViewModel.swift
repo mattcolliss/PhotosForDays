@@ -18,7 +18,9 @@ class PhotoDetailsViewModel {
 
     /// A formatted title to display for the photo
     var photoTitle: String {
-        return photo.title.isEmpty ? "Untitled" : photo.title
+        return photo.title.isEmpty ?
+            localizedString(key: "PhotoDetails.Untitled") :
+            photo.title
     }
 
     /// The current scale type used to dusply the photo

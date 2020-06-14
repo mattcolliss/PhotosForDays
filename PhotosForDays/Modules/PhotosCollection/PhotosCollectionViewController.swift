@@ -38,7 +38,6 @@ class PhotosCollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        setBindings()
         viewModel.fetchPhotos()
     }
 
@@ -56,6 +55,7 @@ extension PhotosCollectionViewController {
 
         title = viewModel.formattedDate
 
+        // Make a diffableDataSource for the collection view
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) { (collectionView, indexPath, photo) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.reuseIdentifier, for: indexPath) as? PhotoCollectionViewCell
             cell?.configure(with: photo, forIndexPath: indexPath)
@@ -63,15 +63,12 @@ extension PhotosCollectionViewController {
             return cell
         }
 
-    }
-
-    private func setBindings() {
-
-        // Update the diffable dataSource whenever the photos change
+        // Update the diffableDataSource whenever the photos change
         viewModel.$photos
             .sink(receiveValue: self.applySnapshot)
             .store(in: &cancellables)
 
+        // Show / hide the error banner depending on if we have an error message
         viewModel.$errorText
             .sink { [weak self] errorText in
                 self?.errorLabel.text = errorText

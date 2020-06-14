@@ -35,7 +35,6 @@ class PhotoDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        setBindings()
     }
 
 }
@@ -44,11 +43,11 @@ class PhotoDetailsViewController: UIViewController {
 extension PhotoDetailsViewController {
 
     private func configureView() {
-        photoImageView.sd_setImage(with: viewModel.photoUrl)
-        titleLabel.text = viewModel.photoTitle
-    }
 
-    private func setBindings() {
+        photoImageView.sd_setImage(with: viewModel.photoUrl)
+
+        titleLabel.text = viewModel.photoTitle
+
         viewModel.$photoScaleMode
             .assign(to: \.contentMode, on: photoImageView)
             .store(in: &cancellables)
