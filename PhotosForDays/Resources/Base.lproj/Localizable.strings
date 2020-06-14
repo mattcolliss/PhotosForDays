@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  PhotosForDays
+
+  Created by Matthew Colliss on 14/06/2020.
+  Copyright © 2020 collissions. All rights reserved.
+*/
+
+// MARK: - Select Date
+"SelectDate.Title" = "Photos For Days";
+"SelectDate.Hint" = "Select a date to get started";
+"SelectDate.SelectedDate" = "Show me photos for\n%1$@";
+"SelectDate.StartButtonTitle" = "Let's Go!";
+
+// MARK: - Photos Collection
+"PhotosCollection.Error" = "Sorry, something went wrong while fetching the photos";
+
+// MARK: - Photo Details
+"PhotoDetails.Untitled" = "Untitled";
+
+// MARK: - Placeholder Details
+"PlaceholderDetails.Hint" = "Select a date to get started";

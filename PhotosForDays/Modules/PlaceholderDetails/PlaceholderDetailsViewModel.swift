@@ -16,7 +16,7 @@ class PlaceholderDetailsViewModel {
     }
 
     var hintText: String {
-        return "Select a date to get started"
+        return localizedString(key: "PlaceholderDetails.Hint")
     }
 
 }

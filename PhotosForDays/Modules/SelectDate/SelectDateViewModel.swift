@@ -12,10 +12,10 @@ import Combine
 class SelectDateViewModel {
 
     /// View controller title
-    let title = "Photos For Days"
+    let title = localizedString(key: "SelectDate.Title")
 
     /// Hint text
-    let hintText = "Select a date to get started"
+    let hintText = localizedString(key: "SelectDate.Hint")
 
     /// The latest date that can be selected by the user -  the day before the current date, as the Flickr expects a date in the past
     let maximumDate = Date().addingDays(-1)
@@ -33,13 +33,14 @@ class SelectDateViewModel {
                 return DateFormatter.fullDateFormatter.string(from: date)
             })
             .map({ formattedDate in
-                return "Show me photos for " + "\n" + formattedDate
+                let format = localizedString(key: "SelectDate.SelectedDate")
+                return String.localizedStringWithFormat(format, formattedDate)
             })
             .eraseToAnyPublisher()
     }
 
     /// Start button title
-    let startButtonTitle = "LET'S GO"
+    let startButtonTitle = localizedString(key: "SelectDate.StartButtonTitle").uppercased()
 
     /// The user selected a new date
     func dateSelected(_ date: Date) {

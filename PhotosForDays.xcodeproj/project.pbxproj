@@ -31,6 +31,8 @@
 		C924582D249541130046F25C /* PhotoDetailsAnimatedTransistioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924582C249541130046F25C /* PhotoDetailsAnimatedTransistioning.swift */; };
 		C9245830249623F90046F25C /* PlaceholderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924582F249623F90046F25C /* PlaceholderDetailsViewController.swift */; };
 		C9245832249624110046F25C /* PlaceholderDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9245831249624110046F25C /* PlaceholderDetailsViewModel.swift */; };
+		C924583724962C970046F25C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C924583524962C970046F25C /* Localizable.strings */; };
+		C924583924962DF10046F25C /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924583824962DF10046F25C /* Localization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		C924582C249541130046F25C /* PhotoDetailsAnimatedTransistioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsAnimatedTransistioning.swift; sourceTree = "<group>"; };
 		C924582F249623F90046F25C /* PlaceholderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderDetailsViewController.swift; sourceTree = "<group>"; };
 		C9245831249624110046F25C /* PlaceholderDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderDetailsViewModel.swift; sourceTree = "<group>"; };
+		C924583624962C970046F25C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C924583824962DF10046F25C /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		E766969BA9BEB4E579786C9E /* Pods-PhotosForDays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosForDays.debug.xcconfig"; path = "Target Support Files/Pods-PhotosForDays/Pods-PhotosForDays.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +134,7 @@
 		C924579A2492A0B10046F25C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C924583524962C970046F25C /* Localizable.strings */,
 				C9245825249528E40046F25C /* Colors.xcassets */,
 				C924578F24929F480046F25C /* Assets.xcassets */,
 				C924579B2492A0BA0046F25C /* Storyboards */,
@@ -199,6 +204,7 @@
 			children = (
 				C924581F2494CEE20046F25C /* Constants.swift */,
 				C92458212494D2250046F25C /* Dates.swift */,
+				C924583824962DF10046F25C /* Localization.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -283,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C924583724962C970046F25C /* Localizable.strings in Resources */,
 				C924579324929F480046F25C /* LaunchScreen.storyboard in Resources */,
 				C9245826249528E40046F25C /* Colors.xcassets in Resources */,
 				C924579024929F480046F25C /* Assets.xcassets in Resources */,
@@ -362,6 +369,7 @@
 				C924580F2492AEB80046F25C /* SelectDateViewModel.swift in Sources */,
 				C924580D2492AA470046F25C /* SelectDateViewController.swift in Sources */,
 				C924582D249541130046F25C /* PhotoDetailsAnimatedTransistioning.swift in Sources */,
+				C924583924962DF10046F25C /* Localization.swift in Sources */,
 				C9245832249624110046F25C /* PlaceholderDetailsViewModel.swift in Sources */,
 				C92457A02492A2380046F25C /* Coordinator.swift in Sources */,
 				C9245813249404A60046F25C /* PhotosCollectionViewController.swift in Sources */,
@@ -395,6 +403,14 @@
 				C924579224929F480046F25C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C924583524962C970046F25C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C924583624962C970046F25C /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

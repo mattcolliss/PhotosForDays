@@ -63,7 +63,7 @@ class PhotosCollectionViewModel {
                 self?.photos.append(contentsOf: getPhotosResponseWrapper.photos.photo)
             case let .failure(error):
                 print(error)
-                self?.errorText = "Sorry, something went wrong while fetching the photos"
+                self?.errorText = localizedString(key: "PhotosCollection.Error")
             }
 
         }
