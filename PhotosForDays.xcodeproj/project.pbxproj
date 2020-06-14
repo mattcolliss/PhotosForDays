@@ -33,6 +33,7 @@
 		C9245832249624110046F25C /* PlaceholderDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9245831249624110046F25C /* PlaceholderDetailsViewModel.swift */; };
 		C924583724962C970046F25C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C924583524962C970046F25C /* Localizable.strings */; };
 		C924583924962DF10046F25C /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924583824962DF10046F25C /* Localization.swift */; };
+		C924583B2496310D0046F25C /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924583A2496310D0046F25C /* Storyboards.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		C9245831249624110046F25C /* PlaceholderDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderDetailsViewModel.swift; sourceTree = "<group>"; };
 		C924583624962C970046F25C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C924583824962DF10046F25C /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		C924583A2496310D0046F25C /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		E766969BA9BEB4E579786C9E /* Pods-PhotosForDays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosForDays.debug.xcconfig"; path = "Target Support Files/Pods-PhotosForDays/Pods-PhotosForDays.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -205,6 +207,7 @@
 				C924581F2494CEE20046F25C /* Constants.swift */,
 				C92458212494D2250046F25C /* Dates.swift */,
 				C924583824962DF10046F25C /* Localization.swift */,
+				C924583A2496310D0046F25C /* Storyboards.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				C924580F2492AEB80046F25C /* SelectDateViewModel.swift in Sources */,
 				C924580D2492AA470046F25C /* SelectDateViewController.swift in Sources */,
 				C924582D249541130046F25C /* PhotoDetailsAnimatedTransistioning.swift in Sources */,
+				C924583B2496310D0046F25C /* Storyboards.swift in Sources */,
 				C924583924962DF10046F25C /* Localization.swift in Sources */,
 				C9245832249624110046F25C /* PlaceholderDetailsViewModel.swift in Sources */,
 				C92457A02492A2380046F25C /* Coordinator.swift in Sources */,
