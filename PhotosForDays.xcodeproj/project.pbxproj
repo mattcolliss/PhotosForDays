@@ -35,6 +35,7 @@
 		C924583924962DF10046F25C /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924583824962DF10046F25C /* Localization.swift */; };
 		C924583B2496310D0046F25C /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924583A2496310D0046F25C /* Storyboards.swift */; };
 		C924583D24963D7C0046F25C /* Theming.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924583C24963D7C0046F25C /* Theming.swift */; };
+		C924586124966B770046F25C /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924586024966B770046F25C /* Device.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		C924583824962DF10046F25C /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		C924583A2496310D0046F25C /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		C924583C24963D7C0046F25C /* Theming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theming.swift; sourceTree = "<group>"; };
+		C924586024966B770046F25C /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		E766969BA9BEB4E579786C9E /* Pods-PhotosForDays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosForDays.debug.xcconfig"; path = "Target Support Files/Pods-PhotosForDays/Pods-PhotosForDays.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,6 +213,7 @@
 				C924583824962DF10046F25C /* Localization.swift */,
 				C924583A2496310D0046F25C /* Storyboards.swift */,
 				C924583C24963D7C0046F25C /* Theming.swift */,
+				C924586024966B770046F25C /* Device.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				C92458242494E3F20046F25C /* PhotoCollectionViewCell.swift in Sources */,
 				C92458172494C3E80046F25C /* WebServiceConfiguration.swift in Sources */,
 				C924583D24963D7C0046F25C /* Theming.swift in Sources */,
+				C924586124966B770046F25C /* Device.swift in Sources */,
 				C92458202494CEE20046F25C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

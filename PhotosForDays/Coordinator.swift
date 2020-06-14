@@ -80,10 +80,15 @@ extension Coordinator: PhotosCollectionViewControllerDelegate {
         photoDetailsViewController.delegate = self
 
         let detailNav = UINavigationController(rootViewController: photoDetailsViewController)
-        detailNav.modalPresentationStyle = .fullScreen
-        detailNav.transitioningDelegate = self
-        photoDetailsAnimatedTransistioning.originFrame = frame
-        photoDetailsAnimatedTransistioning.presenting = true
+
+        // On iPad use the default modal presentation style, on iPhone use a fullscreen modal with a custom transition
+        if !UIDevice.current.isIPad {
+            detailNav.modalPresentationStyle = .fullScreen
+            detailNav.transitioningDelegate = self
+            photoDetailsAnimatedTransistioning.originFrame = frame
+            photoDetailsAnimatedTransistioning.presenting = true
+        }
+
         splitViewController.present(detailNav, animated: true, completion: nil)
 
     }
