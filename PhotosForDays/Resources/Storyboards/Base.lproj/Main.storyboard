@@ -124,7 +124,6 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <variation key="heightClass=compact-widthClass=compact" alignment="center" axis="horizontal"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -275,9 +274,9 @@
                                 </connections>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0x-cb-gWJ">
-                                <rect key="frame" x="0.0" y="747.66666666666663" width="414" height="65.333333333333371"/>
+                                <rect key="frame" x="0.0" y="747.33333333333337" width="414" height="148.66666666666663"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wIh-Sh-rA6">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="148.66666666666663"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aZI-uP-85F">
@@ -295,7 +294,6 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="aZI-uP-85F" firstAttribute="top" secondItem="wIh-Sh-rA6" secondAttribute="top" id="58R-Bl-uPL"/>
-                                        <constraint firstAttribute="bottom" secondItem="aZI-uP-85F" secondAttribute="bottom" id="L1a-jh-ZmZ"/>
                                         <constraint firstItem="aZI-uP-85F" firstAttribute="leading" secondItem="wIh-Sh-rA6" secondAttribute="leading" id="MCa-4t-IXm"/>
                                         <constraint firstAttribute="trailing" secondItem="aZI-uP-85F" secondAttribute="trailing" id="VWM-Xs-gRp"/>
                                     </constraints>
@@ -307,10 +305,11 @@
                         <constraints>
                             <constraint firstItem="plK-rG-o7V" firstAttribute="top" secondItem="xe2-xx-0JS" secondAttribute="top" id="6ZP-cZ-B7Y"/>
                             <constraint firstAttribute="trailing" secondItem="plK-rG-o7V" secondAttribute="trailing" id="M9Y-XS-MbY"/>
+                            <constraint firstItem="aZI-uP-85F" firstAttribute="bottom" secondItem="uAh-7U-GQ7" secondAttribute="bottom" id="Pfz-X6-TiD"/>
                             <constraint firstAttribute="bottom" secondItem="plK-rG-o7V" secondAttribute="bottom" id="ZbF-4p-cbm"/>
-                            <constraint firstItem="uAh-7U-GQ7" firstAttribute="bottom" secondItem="g0x-cb-gWJ" secondAttribute="bottom" id="c1N-6e-Dx0"/>
-                            <constraint firstItem="uAh-7U-GQ7" firstAttribute="trailing" secondItem="g0x-cb-gWJ" secondAttribute="trailing" id="fRB-hS-bz3"/>
-                            <constraint firstItem="g0x-cb-gWJ" firstAttribute="leading" secondItem="uAh-7U-GQ7" secondAttribute="leading" id="spR-u1-8QB"/>
+                            <constraint firstAttribute="bottom" secondItem="g0x-cb-gWJ" secondAttribute="bottom" id="c1N-6e-Dx0"/>
+                            <constraint firstAttribute="trailing" secondItem="g0x-cb-gWJ" secondAttribute="trailing" id="fRB-hS-bz3"/>
+                            <constraint firstItem="g0x-cb-gWJ" firstAttribute="leading" secondItem="xe2-xx-0JS" secondAttribute="leading" id="spR-u1-8QB"/>
                             <constraint firstItem="plK-rG-o7V" firstAttribute="leading" secondItem="xe2-xx-0JS" secondAttribute="leading" id="yGL-xK-Ltq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uAh-7U-GQ7"/>
