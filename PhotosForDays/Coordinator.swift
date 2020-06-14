@@ -14,7 +14,7 @@ class Coordinator: NSObject {
     let splitViewController: UISplitViewController
 
     /// The storyboard containing all dispalyed view controllers in this coordinator
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let storyboard = UIStoryboard(.main)
 
     /// Custom animated transitioning for presenting the photo details view controller
     let photoDetailsAnimatedTransistioning = PhotoDetailsAnimatedTransistioning()
@@ -30,14 +30,15 @@ class Coordinator: NSObject {
 
         //Scaffold the initial view controllers for the splitViewController
         let selectDateViewModel = SelectDateViewModel()
-        let selectDateViewController: SelectDateViewController = storyboard.instantiateViewController(identifier: "SelectDateViewController") { coder in
+        let selectDateViewController: SelectDateViewController = storyboard.instantiateViewController { coder in
             return SelectDateViewController(coder: coder, viewModel: selectDateViewModel)
         }
+
         selectDateViewController.delegate = self
 
         //Placeholder details displayed in the splitViewController details until a date is selected
         let placeholderDetailsViewModel = PlaceholderDetailsViewModel()
-        let placeholderViewController: PlaceholderDetailsViewController = storyboard.instantiateViewController(identifier: "PlaceholderDetailsViewController") { coder in
+        let placeholderViewController: PlaceholderDetailsViewController = storyboard.instantiateViewController { coder in
             return PlaceholderDetailsViewController(coder: coder, viewModel: placeholderDetailsViewModel)
         }
 
@@ -55,7 +56,7 @@ extension Coordinator: SelectDateViewControllerDelegate {
     func didSelect(_ date: Date) {
         // Set the detail view controller to a new instance of the photos collection view for the slected date
         let photosCollectionViewModel = PhotosCollectionViewModel(date: date)
-        let photosCollectionViewController: PhotosCollectionViewController = storyboard.instantiateViewController(identifier: "PhotosCollectionViewController") { coder in
+        let photosCollectionViewController: PhotosCollectionViewController = storyboard.instantiateViewController { coder in
             return PhotosCollectionViewController(coder: coder, viewModel: photosCollectionViewModel)
         }
         photosCollectionViewController.delegate = self
@@ -73,7 +74,7 @@ extension Coordinator: PhotosCollectionViewControllerDelegate {
 
         // Present the photo details view controller modally from the splitViewController
         let photoDetailsViewModel = PhotoDetailsViewModel(photo: photo)
-        let photoDetailsViewController: PhotoDetailsViewController = storyboard.instantiateViewController(identifier: "PhotoDetailsViewController") { coder in
+        let photoDetailsViewController: PhotoDetailsViewController = storyboard.instantiateViewController { coder in
             return PhotoDetailsViewController(coder: coder, viewModel: photoDetailsViewModel)
         }
         photoDetailsViewController.delegate = self
