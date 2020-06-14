@@ -9,6 +9,55 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Placeholder Details View Controller-->
+        <scene sceneID="k4F-YV-htD">
+            <objects>
+                <viewController storyboardIdentifier="PlaceholderDetailsViewController" id="oV7-vW-X5H" customClass="PlaceholderDetailsViewController" customModule="PhotosForDays" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cXz-ZR-vKt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6dj-Ps-acK">
+                                <rect key="frame" x="107" y="390.66666666666669" width="200" height="115"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VDk-CF-KUx">
+                                        <rect key="frame" x="75" y="1.6666666666666643" width="50" height="47"/>
+                                        <color key="tintColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="X78-Bx-bW3"/>
+                                            <constraint firstAttribute="height" constant="50" id="hLJ-7Y-i6x"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Select a date to get started&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zl5-9H-rbq">
+                                        <rect key="frame" x="24.666666666666657" y="66" width="151" height="49"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="xjG-Sb-qNn"/>
+                                </constraints>
+                                <variation key="heightClass=compact-widthClass=compact" axis="horizontal"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6dj-Ps-acK" firstAttribute="centerY" secondItem="cXz-ZR-vKt" secondAttribute="centerY" id="kGJ-Jc-FtX"/>
+                            <constraint firstItem="6dj-Ps-acK" firstAttribute="centerX" secondItem="cXz-ZR-vKt" secondAttribute="centerX" id="zDH-J8-8Qa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aAE-FY-wW3"/>
+                    </view>
+                    <connections>
+                        <outlet property="hintLabel" destination="zl5-9H-rbq" id="hlD-W6-fju"/>
+                        <outlet property="iconImageView" destination="VDk-CF-KUx" id="O4z-Xm-Gi1"/>
+                        <outlet property="view" destination="cXz-ZR-vKt" id="ffv-UI-L6i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VDA-cl-zSw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-921" y="-71"/>
+        </scene>
         <!--Photos For Days-->
         <scene sceneID="DGv-Dn-KfA">
             <objects>
@@ -215,13 +264,13 @@
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0x-cb-gWJ">
                                 <rect key="frame" x="0.0" y="747.33333333333337" width="414" height="65.666666666666629"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wIh-Sh-rA6">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="65.666666666666629"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aZI-uP-85F">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="65.666666666666671"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="TItle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOl-jC-KDs">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="&lt;title&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOl-jC-KDs">
                                                     <rect key="frame" x="16" y="15.999999999999996" width="382" height="33.666666666666657"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <nil key="textColor"/>
@@ -280,6 +329,7 @@
     </scenes>
     <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
+        <image name="calendar" catalog="system" width="128" height="106"/>
         <namedColor name="ErrorBackground">
             <color red="0.98039215686274506" green="0.20392156862745098" blue="0.16470588235294117" alpha="0.89999997615814209" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
