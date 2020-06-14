@@ -35,11 +35,14 @@ class Coordinator: NSObject {
         }
         selectDateViewController.delegate = self
 
-        let masterNav = UINavigationController(rootViewController: selectDateViewController)
-        let vc = UIViewController()
-        vc.view.backgroundColor = .systemPurple
-        let detailNav = UINavigationController(rootViewController: vc)
+        //Placeholder details displayed in the splitViewController details until a date is selected
+        let placeholderDetailsViewModel = PlaceholderDetailsViewModel()
+        let placeholderViewController: PlaceholderDetailsViewController = storyboard.instantiateViewController(identifier: "PlaceholderDetailsViewController") { coder in
+            return PlaceholderDetailsViewController(coder: coder, viewModel: placeholderDetailsViewModel)
+        }
 
+        let masterNav = UINavigationController(rootViewController: selectDateViewController)
+        let detailNav = UINavigationController(rootViewController: placeholderViewController)
         splitViewController.viewControllers = [masterNav, detailNav]
 
     }
