@@ -45,6 +45,8 @@ extension PhotoDetailsViewController {
     private func configureView() {
 
         photoImageView.sd_setImage(with: viewModel.photoUrl)
+        photoImageView.accessibilityLabel = viewModel.photoTitle
+        photoImageView.isAccessibilityElement = true
 
         titleLabel.text = viewModel.photoTitle
 

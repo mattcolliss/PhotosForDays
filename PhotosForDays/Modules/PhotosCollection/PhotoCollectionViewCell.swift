@@ -18,6 +18,9 @@ class PhotoCollectionViewCell: UICollectionViewCell {
 
     func configure(with photo: Photo, forIndexPath indexPath: IndexPath) {
         photoImageView.sd_setImage(with: photo.url)
+        photoImageView.accessibilityLabel = photo.title
+        photoImageView.isAccessibilityElement = true
+        photoImageView.accessibilityTraits = .button
     }
 
     override func prepareForReuse() {
