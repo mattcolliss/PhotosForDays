@@ -28,7 +28,7 @@ class PhotoDetailViewModelTests: XCTestCase {
     }
 
     func testPhotoTitle() {
-        XCTAssert(!viewModel.photoTitle.isEmpty)
+        XCTAssertFalse(viewModel.photoTitle.isEmpty)
     }
 
     func testPhotoScaleMode() {

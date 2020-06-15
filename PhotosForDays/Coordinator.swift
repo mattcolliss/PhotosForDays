@@ -55,7 +55,8 @@ extension Coordinator: SelectDateViewControllerDelegate {
 
     func didSelect(_ date: Date) {
         // Set the detail view controller to a new instance of the photos collection view for the slected date
-        let photosCollectionViewModel = PhotosCollectionViewModel(date: date)
+        let photosService = PhotosService()
+        let photosCollectionViewModel = PhotosCollectionViewModel(date: date, photosService: photosService)
         let photosCollectionViewController: PhotosCollectionViewController = storyboard.instantiateViewController { coder in
             return PhotosCollectionViewController(coder: coder, viewModel: photosCollectionViewModel)
         }

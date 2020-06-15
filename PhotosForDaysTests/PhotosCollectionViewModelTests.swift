@@ -16,7 +16,8 @@ class PhotosCollectionViewModelTests: XCTestCase {
     override func setUp() {
         super.setUp()
         let date = Date()
-        viewModel = PhotosCollectionViewModel(date: date)
+        let mockPhotosService = MockPhotosService()
+        viewModel = PhotosCollectionViewModel(date: date, photosService: mockPhotosService)
     }
 
     override func tearDown() {
@@ -24,7 +25,29 @@ class PhotosCollectionViewModelTests: XCTestCase {
     }
 
     func testFormattedDate() {
-        XCTAssert(!viewModel.formattedDate.isEmpty)
+        XCTAssertFalse(viewModel.formattedDate.isEmpty)
+    }
+
+    func testFetchPhotos() {
+
+        XCTAssert(viewModel.morePhotosAvailable)
+        XCTAssertEqual(viewModel.photos.count, 0)
+
+        viewModel.fetchPhotos()
+
+        XCTAssert(viewModel.morePhotosAvailable)
+        XCTAssertEqual(viewModel.photos.count, 1)
+
+        viewModel.fetchPhotos()
+
+        XCTAssert(viewModel.morePhotosAvailable)
+        XCTAssertEqual(viewModel.photos.count, 2)
+
+        viewModel.fetchPhotos()
+
+        XCTAssertFalse(viewModel.morePhotosAvailable)
+        XCTAssertEqual(viewModel.photos.count, 3)
+
     }
 
 }

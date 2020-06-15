@@ -23,11 +23,11 @@ class SelectDateViewModelTests: XCTestCase {
     }
 
     func testTitle() {
-        XCTAssert(!viewModel.title.isEmpty)
+        XCTAssertFalse(viewModel.title.isEmpty)
     }
 
     func testHintText() {
-        XCTAssert(!viewModel.hintText.isEmpty)
+        XCTAssertFalse(viewModel.hintText.isEmpty)
     }
 
     func testMaximumDate() {
@@ -43,7 +43,7 @@ class SelectDateViewModelTests: XCTestCase {
     }
 
     func testStartButtonTitle() {
-        XCTAssert(!viewModel.startButtonTitle.isEmpty)
+        XCTAssertFalse(viewModel.startButtonTitle.isEmpty)
     }
 
     func testSelectDate() {

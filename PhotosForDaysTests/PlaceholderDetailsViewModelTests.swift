@@ -27,7 +27,7 @@ class PlaceholderDetailsViewModelTests: XCTestCase {
     }
 
     func testHintText() {
-        XCTAssert(!viewModel.hintText.isEmpty)
+        XCTAssertFalse(viewModel.hintText.isEmpty)
     }
 
 }
