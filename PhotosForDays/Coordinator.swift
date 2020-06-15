@@ -183,12 +183,6 @@ extension Coordinator: UIViewControllerTransitioningDelegate {
 extension Coordinator: UISplitViewControllerDelegate {
 
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-
-        if let navController = secondaryViewController as? UINavigationController,
-            navController.viewControllers.first is PhotoDetailsViewController {
-            return false
-        }
-
         return true
     }
 
