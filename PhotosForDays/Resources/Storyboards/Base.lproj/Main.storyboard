@@ -79,9 +79,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="99.666666666666671"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Select a date to get started:&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1w8-Wk-aVl">
-                                                                <rect key="frame" x="82" y="32.000000000000007" width="250" height="67.666666666666686"/>
+                                                                <rect key="frame" x="102.66666666666667" y="32.000000000000007" width="208.66666666666663" height="67.666666666666686"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="250" id="Z0S-F2-5V2"/>
+                                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" priority="999" constant="250" id="Z0S-F2-5V2"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                                 <color key="textColor" name="PrimaryLabel"/>
@@ -103,9 +103,9 @@
                                                 <rect key="frame" x="0.0" y="378.66666666666669" width="414" height="81.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Show me photos for&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVB-kY-ZEG">
-                                                        <rect key="frame" x="82" y="0.0" width="250" height="20.333333333333332"/>
+                                                        <rect key="frame" x="119.66666666666669" y="0.0" width="175" height="20.333333333333332"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="250" id="51L-NV-IKW"/>
+                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" priority="999" constant="250" id="51L-NV-IKW"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <color key="textColor" name="PrimaryLabel"/>
