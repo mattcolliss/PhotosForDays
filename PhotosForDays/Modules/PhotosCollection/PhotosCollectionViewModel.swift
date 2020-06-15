@@ -37,9 +37,11 @@ class PhotosCollectionViewModel {
     private var nextPage = 1
     private var totalPages = 1
     private var date: Date
+    private var photosService: PhotosServiceProvider
 
-    init(date: Date) {
+    init(date: Date, photosService: PhotosServiceProvider) {
         self.date = date
+        self.photosService = photosService
     }
 
     /// Fetch  the next page of photos from the Flickr API
@@ -52,7 +54,7 @@ class PhotosCollectionViewModel {
         errorText = nil
         fecthingPhotos = true
 
-        GetPhotosConfiguration(date: date, page: nextPage).start { [weak self] (result) in
+        photosService.fetchPhotos(for: date, atPage: nextPage) { [weak self] (result) in
 
             switch result {
             case let .success(getPhotosResponseWrapper):

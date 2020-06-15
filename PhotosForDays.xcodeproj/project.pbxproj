@@ -36,7 +36,23 @@
 		C924583B2496310D0046F25C /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924583A2496310D0046F25C /* Storyboards.swift */; };
 		C924583D24963D7C0046F25C /* Theming.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924583C24963D7C0046F25C /* Theming.swift */; };
 		C924586124966B770046F25C /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924586024966B770046F25C /* Device.swift */; };
+		C924587124967CFF0046F25C /* SelectDateViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924587024967CFF0046F25C /* SelectDateViewModelTests.swift */; };
+		C924587324967E820046F25C /* PhotosCollectionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924587224967E820046F25C /* PhotosCollectionViewModelTests.swift */; };
+		C924587524967ECF0046F25C /* PhotoDetailsVIewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924587424967ECF0046F25C /* PhotoDetailsVIewModelTests.swift */; };
+		C924587724967F660046F25C /* PlaceholderDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924587624967F660046F25C /* PlaceholderDetailsViewModelTests.swift */; };
+		C924587D24974F4B0046F25C /* PhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924587C24974F4B0046F25C /* PhotosService.swift */; };
+		C924587F2497511D0046F25C /* MockPhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924587E2497511D0046F25C /* MockPhotosService.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C924586B24967A5C0046F25C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C924577B24929F440046F25C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C924578224929F440046F25C;
+			remoteInfo = PhotosForDays;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		44F3ACD1929FBE3467ECB6FD /* Pods_PhotosForDays.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosForDays.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +87,14 @@
 		C924583A2496310D0046F25C /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		C924583C24963D7C0046F25C /* Theming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theming.swift; sourceTree = "<group>"; };
 		C924586024966B770046F25C /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		C924586624967A5C0046F25C /* PhotosForDaysTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotosForDaysTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C924586A24967A5C0046F25C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C924587024967CFF0046F25C /* SelectDateViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateViewModelTests.swift; sourceTree = "<group>"; };
+		C924587224967E820046F25C /* PhotosCollectionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewModelTests.swift; sourceTree = "<group>"; };
+		C924587424967ECF0046F25C /* PhotoDetailsVIewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsVIewModelTests.swift; sourceTree = "<group>"; };
+		C924587624967F660046F25C /* PlaceholderDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderDetailsViewModelTests.swift; sourceTree = "<group>"; };
+		C924587C24974F4B0046F25C /* PhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosService.swift; sourceTree = "<group>"; };
+		C924587E2497511D0046F25C /* MockPhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotosService.swift; sourceTree = "<group>"; };
 		E766969BA9BEB4E579786C9E /* Pods-PhotosForDays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosForDays.debug.xcconfig"; path = "Target Support Files/Pods-PhotosForDays/Pods-PhotosForDays.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +104,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BD682879FF57298AFFE3801 /* Pods_PhotosForDays.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C924586324967A5C0046F25C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				C924578524929F440046F25C /* PhotosForDays */,
+				C924586724967A5C0046F25C /* PhotosForDaysTests */,
 				C924578424929F440046F25C /* Products */,
 				263D343C9A258A1BAC7E6EB2 /* Pods */,
 				4367D5787691F35D985E6068 /* Frameworks */,
@@ -117,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				C924578324929F440046F25C /* PhotosForDays.app */,
+				C924586624967A5C0046F25C /* PhotosForDaysTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,6 +215,7 @@
 				C92458162494C3E80046F25C /* WebServiceConfiguration.swift */,
 				C92458182494C4C40046F25C /* WebServiceError.swift */,
 				C924581A2494C5420046F25C /* GetPhotosConfiguration.swift */,
+				C924587C24974F4B0046F25C /* PhotosService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -237,6 +271,19 @@
 			path = PlaceholderDetails;
 			sourceTree = "<group>";
 		};
+		C924586724967A5C0046F25C /* PhotosForDaysTests */ = {
+			isa = PBXGroup;
+			children = (
+				C924586A24967A5C0046F25C /* Info.plist */,
+				C924587024967CFF0046F25C /* SelectDateViewModelTests.swift */,
+				C924587224967E820046F25C /* PhotosCollectionViewModelTests.swift */,
+				C924587424967ECF0046F25C /* PhotoDetailsVIewModelTests.swift */,
+				C924587624967F660046F25C /* PlaceholderDetailsViewModelTests.swift */,
+				C924587E2497511D0046F25C /* MockPhotosService.swift */,
+			);
+			path = PhotosForDaysTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -260,6 +307,24 @@
 			productReference = C924578324929F440046F25C /* PhotosForDays.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C924586524967A5C0046F25C /* PhotosForDaysTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C924586F24967A5C0046F25C /* Build configuration list for PBXNativeTarget "PhotosForDaysTests" */;
+			buildPhases = (
+				C924586224967A5C0046F25C /* Sources */,
+				C924586324967A5C0046F25C /* Frameworks */,
+				C924586424967A5C0046F25C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C924586C24967A5C0046F25C /* PBXTargetDependency */,
+			);
+			name = PhotosForDaysTests;
+			productName = PhotosForDaysTests;
+			productReference = C924586624967A5C0046F25C /* PhotosForDaysTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -272,6 +337,10 @@
 				TargetAttributes = {
 					C924578224929F440046F25C = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					C924586524967A5C0046F25C = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = C924578224929F440046F25C;
 					};
 				};
 			};
@@ -289,6 +358,7 @@
 			projectRoot = "";
 			targets = (
 				C924578224929F440046F25C /* PhotosForDays */,
+				C924586524967A5C0046F25C /* PhotosForDaysTests */,
 			);
 		};
 /* End PBXProject section */
@@ -303,6 +373,13 @@
 				C9245826249528E40046F25C /* Colors.xcassets in Resources */,
 				C924579024929F480046F25C /* Assets.xcassets in Resources */,
 				C924578E24929F440046F25C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C924586424967A5C0046F25C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +453,7 @@
 				C9245815249404BB0046F25C /* PhotosCollectionViewModel.swift in Sources */,
 				C924582B249530850046F25C /* PhotoDetailsViewModel.swift in Sources */,
 				C924580F2492AEB80046F25C /* SelectDateViewModel.swift in Sources */,
+				C924587D24974F4B0046F25C /* PhotosService.swift in Sources */,
 				C924580D2492AA470046F25C /* SelectDateViewController.swift in Sources */,
 				C924582D249541130046F25C /* PhotoDetailsAnimatedTransistioning.swift in Sources */,
 				C924583B2496310D0046F25C /* Storyboards.swift in Sources */,
@@ -398,7 +476,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C924586224967A5C0046F25C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C924587524967ECF0046F25C /* PhotoDetailsVIewModelTests.swift in Sources */,
+				C924587324967E820046F25C /* PhotosCollectionViewModelTests.swift in Sources */,
+				C924587724967F660046F25C /* PlaceholderDetailsViewModelTests.swift in Sources */,
+				C924587124967CFF0046F25C /* SelectDateViewModelTests.swift in Sources */,
+				C924587F2497511D0046F25C /* MockPhotosService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C924586C24967A5C0046F25C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C924578224929F440046F25C /* PhotosForDays */;
+			targetProxy = C924586B24967A5C0046F25C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C924578C24929F440046F25C /* Main.storyboard */ = {
@@ -580,6 +678,46 @@
 			};
 			name = Release;
 		};
+		C924586D24967A5C0046F25C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C77473KVZX;
+				INFOPLIST_FILE = PhotosForDaysTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.collissions.PhotosForDaysTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotosForDays.app/PhotosForDays";
+			};
+			name = Debug;
+		};
+		C924586E24967A5C0046F25C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C77473KVZX;
+				INFOPLIST_FILE = PhotosForDaysTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.collissions.PhotosForDaysTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotosForDays.app/PhotosForDays";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -597,6 +735,15 @@
 			buildConfigurations = (
 				C924579824929F480046F25C /* Debug */,
 				C924579924929F480046F25C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C924586F24967A5C0046F25C /* Build configuration list for PBXNativeTarget "PhotosForDaysTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C924586D24967A5C0046F25C /* Debug */,
+				C924586E24967A5C0046F25C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
