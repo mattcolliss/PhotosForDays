@@ -50,10 +50,47 @@ class Coordinator: NSObject {
 
 }
 
+// MARK: - State Restoration
+extension Coordinator {
+
+    func restoreState(for userActivity: NSUserActivity) {
+
+        // check if there is a selected date in the restore state
+        if let date = userActivity.userInfo?["selectedDate"] as? Date {
+
+            //restore the photos collection for the selected date
+            presentPhotosCollection(for: date)
+
+            // check if there is a selected photo in the restore state
+            if let photo = userActivity.userInfo?["photo"] as? Photo {
+
+                //restore the photo details modal for the selected photo
+                presentPhotoDetils(for: photo, animated: false)
+            }
+
+        }
+
+    }
+
+}
+
 // MARK: - SelectDateViewControllerDelegate
 extension Coordinator: SelectDateViewControllerDelegate {
 
     func didSelect(_ date: Date) {
+
+        //show the photos collection vc for the selected date
+        presentPhotosCollection(for: date)
+
+        //set the user activity for state restoration
+        let userActivity = NSUserActivity(activityType: selectDateActivityType)
+        let formattedDate = DateFormatter.apiRequestFormatter.string(from: date)
+        userActivity.title = formattedDate
+        userActivity.userInfo = ["id": formattedDate, "selectedDate": date]
+        splitViewController.view.window?.windowScene?.userActivity = userActivity
+    }
+
+    private func presentPhotosCollection(for date: Date) {
         // Set the detail view controller to a new instance of the photos collection view for the slected date
         let photosService = PhotosService()
         let photosCollectionViewModel = PhotosCollectionViewModel(date: date, photosService: photosService)
@@ -64,14 +101,6 @@ extension Coordinator: SelectDateViewControllerDelegate {
 
         let detailNav = UINavigationController(rootViewController: photosCollectionViewController)
         splitViewController.showDetailViewController(detailNav, sender: self)
-
-        //set the user activity for state restoration
-        let userActivity = NSUserActivity(activityType: selectDateActivityType)
-        let formattedDate = DateFormatter.apiRequestFormatter.string(from: date)
-        userActivity.title = formattedDate
-        userActivity.userInfo = ["id": formattedDate, "date": date]
-        splitViewController.view.window?.windowScene?.userActivity = userActivity
-
     }
 
 }
@@ -81,6 +110,18 @@ extension Coordinator: PhotosCollectionViewControllerDelegate {
 
     func didSelect(_ photo: Photo, forDate date: Date, withFrame frame: CGRect) {
 
+        // show the photo details for the selected photo
+        presentPhotoDetils(for: photo, fromFrame: frame, animated: true)
+
+        //set the user activity for state restoration
+        let userActivity = NSUserActivity(activityType: selectPhotoActivityType)
+        userActivity.title = photo.title
+        userActivity.userInfo = ["id": photo.id, "selectedDate": date]
+        splitViewController.view.window?.windowScene?.userActivity = userActivity
+
+    }
+
+    func presentPhotoDetils(for photo: Photo, fromFrame frame: CGRect = .zero, animated: Bool) {
         // Present the photo details view controller modally from the splitViewController
         let photoDetailsViewModel = PhotoDetailsViewModel(photo: photo)
         let photoDetailsViewController: PhotoDetailsViewController = storyboard.instantiateViewController { coder in
@@ -91,21 +132,14 @@ extension Coordinator: PhotosCollectionViewControllerDelegate {
         let detailNav = UINavigationController(rootViewController: photoDetailsViewController)
 
         // On iPad use the default modal presentation style, on iPhone use a fullscreen modal with a custom transition
-        if !UIDevice.current.isIPad {
+        if !UIDevice.current.isIPad && animated {
             detailNav.modalPresentationStyle = .fullScreen
             detailNav.transitioningDelegate = self
             photoDetailsAnimatedTransistioning.originFrame = frame
             photoDetailsAnimatedTransistioning.presenting = true
         }
 
-        splitViewController.present(detailNav, animated: true, completion: nil)
-
-        //set the user activity for state restoration
-        let userActivity = NSUserActivity(activityType: selectPhotoActivityType)
-        userActivity.title = photo.title
-        userActivity.userInfo = ["id": photo.id, "date": date]
-        splitViewController.view.window?.windowScene?.userActivity = userActivity
-
+        splitViewController.present(detailNav, animated: animated, completion: nil)
     }
 
 }
@@ -149,6 +183,12 @@ extension Coordinator: UIViewControllerTransitioningDelegate {
 extension Coordinator: UISplitViewControllerDelegate {
 
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+
+        if let navController = secondaryViewController as? UINavigationController,
+            navController.viewControllers.first is PhotoDetailsViewController {
+            return false
+        }
+
         return true
     }
 

@@ -26,6 +26,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
         self.window = window
 
+        // Check if we need to apply any state restoration
+        if let userActivity = connectionOptions.userActivities.first ?? session.stateRestorationActivity {
+            print("restoring state")
+            coordinator?.restoreState(for: userActivity)
+        }
+
+    }
+
+    func stateRestorationActivity(for scene: UIScene) -> NSUserActivity? {
+        return scene.userActivity
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
