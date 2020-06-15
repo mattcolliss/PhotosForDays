@@ -64,6 +64,14 @@ extension Coordinator: SelectDateViewControllerDelegate {
 
         let detailNav = UINavigationController(rootViewController: photosCollectionViewController)
         splitViewController.showDetailViewController(detailNav, sender: self)
+
+        //set the user activity for state restoration
+        let userActivity = NSUserActivity(activityType: selectDateActivityType)
+        let formattedDate = DateFormatter.apiRequestFormatter.string(from: date)
+        userActivity.title = formattedDate
+        userActivity.userInfo = ["id": formattedDate, "date": date]
+        splitViewController.view.window?.windowScene?.userActivity = userActivity
+
     }
 
 }
@@ -71,7 +79,7 @@ extension Coordinator: SelectDateViewControllerDelegate {
 // MARK: - PhotosCollectionViewControllerDelegate
 extension Coordinator: PhotosCollectionViewControllerDelegate {
 
-    func didSelect(_ photo: Photo, withFrame frame: CGRect) {
+    func didSelect(_ photo: Photo, forDate date: Date, withFrame frame: CGRect) {
 
         // Present the photo details view controller modally from the splitViewController
         let photoDetailsViewModel = PhotoDetailsViewModel(photo: photo)
@@ -91,6 +99,12 @@ extension Coordinator: PhotosCollectionViewControllerDelegate {
         }
 
         splitViewController.present(detailNav, animated: true, completion: nil)
+
+        //set the user activity for state restoration
+        let userActivity = NSUserActivity(activityType: selectPhotoActivityType)
+        userActivity.title = photo.title
+        userActivity.userInfo = ["id": photo.id, "date": date]
+        splitViewController.view.window?.windowScene?.userActivity = userActivity
 
     }
 

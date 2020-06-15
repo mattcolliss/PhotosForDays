@@ -32,11 +32,13 @@ class PhotosCollectionViewModel {
     /// The minimum amount of spacing between each row and column in the collection
     let minimumSpacing: CGFloat = 1
 
+    /// The selected date to show photos for
+    var date: Date
+
     @Published var errorText: String?
 
     private var nextPage = 1
     private var totalPages = 1
-    private var date: Date
     private var photosService: PhotosServiceProvider
 
     init(date: Date, photosService: PhotosServiceProvider) {

@@ -11,7 +11,7 @@ import Combine
 
 // MARK: - PhotosCollectionViewControllerDelegate
 protocol PhotosCollectionViewControllerDelegate: class {
-    func didSelect(_ photo: Photo, withFrame frame: CGRect)
+    func didSelect(_ photo: Photo, forDate date: Date, withFrame frame: CGRect)
 }
 
 // MARK: - PhotosCollectionViewController
@@ -123,7 +123,7 @@ extension PhotosCollectionViewController: UICollectionViewDelegateFlowLayout {
         let selectedCellFrame = CGRect(origin: selectedCellOrigin, size: CGSize(width: itemWidth, height: itemWidth))
 
         let photo = viewModel.photos[indexPath.item]
-        delegate?.didSelect(photo, withFrame: selectedCellFrame)
+        delegate?.didSelect(photo, forDate: viewModel.date, withFrame: selectedCellFrame)
     }
 
 }
