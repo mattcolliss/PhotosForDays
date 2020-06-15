@@ -28,7 +28,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Check if we need to apply any state restoration
         if let userActivity = connectionOptions.userActivities.first ?? session.stateRestorationActivity {
-            print("restoring state")
             coordinator?.restoreState(for: userActivity)
         }
 
